@@ -10,5 +10,5 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: web
+            serviceName: kubeweb
             servicePort: 5000
