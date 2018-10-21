@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sync-pod
+spec:
+  selector:
+    matchLabels:
+      run: sync-pod
+  replicas: 1
+  template:
+    metadata: 
+      labels:
+        run: sync-pod
+    spec:
+      containers:
+      - name: sync-pod
+        image: hashicorp/consul-k8s:0.2.0
+        command:
+          - "/bin/sh"
+          - "-ec"
+          - "consul-k8s sync-catalog -http-addr=consul:8500 -k8s-write-namespace=kube-public"
