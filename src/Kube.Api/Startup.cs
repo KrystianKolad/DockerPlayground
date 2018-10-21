@@ -31,7 +31,7 @@ namespace Kube.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IMongoClient>(new MongoClient(Configuration.GetConnectionString("mongo")));
-            services.AddTransient<IRepository<Book>,BookRepository>();
+            services.AddScoped<IRepository<Book>,BookRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
