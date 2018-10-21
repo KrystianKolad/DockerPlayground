@@ -2,3 +2,18 @@
 @model AddModel
 @{
 }
+
+<form method="POST">
+    <div class="input-group col-xs-4">
+        <span class="input-group-addon" >Name</span>  
+        <input class="form-control" asp-for="Book.Name" />
+    </div>
+    <div class="input-group col-xs-4">
+        <span class="input-group-addon" >Author</span>  
+        <input class="form-control" asp-for="Book.Author" />
+    </div>
+    <div class="input-group col-xs-4">
+        <span class="input-group-addon" >Description</span>  
+        <input class="form-control" asp-for="Book.Description" />
+    </div>
+</form>

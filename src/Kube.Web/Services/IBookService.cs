@@ -14,9 +14,9 @@ namespace Kube.Web.Services
         Task<IEnumerable<Book>> GetAll();
 
         [Get("{id}")]
-        Task<IEnumerable<Book>> Find([Path]Guid id);
+        Task<Book> Find([Path]Guid id);
 
         [Post]
-        Task<IEnumerable<Book>> Post([Body]Book book);
+        Task<IEnumerable<Book>> Add([Body]Book book);
     }
 }

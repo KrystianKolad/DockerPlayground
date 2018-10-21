@@ -1,4 +1,16 @@
-﻿@page
+﻿@page "{id:Guid}"
 @model DetailsModel
 @{
 }
+
+<label>
+    Name: @Model.Book.Name
+</label>
+<br>
+<label>
+    Author: @Model.Book.Author
+</label>
+<br>
+<label>
+    Description: @Model.Book.Description
+</label>
