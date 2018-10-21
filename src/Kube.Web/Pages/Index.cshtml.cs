@@ -12,7 +12,7 @@ namespace Kube.Web.Pages
     public class IndexModel : PageModel
     {
         private IBookService _service;
-        public IEnumerable<Book> Books { get; set; }
+        public IList<Book> Books { get; set; }
         public IndexModel(IBookService service)
         {
             _service = service;

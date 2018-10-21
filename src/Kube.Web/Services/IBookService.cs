@@ -11,12 +11,12 @@ namespace Kube.Web.Services
     public interface IBookService
     {
         [Get]
-        Task<IEnumerable<Book>> GetAll();
+        Task<IList<Book>> GetAll();
 
         [Get("{id}")]
         Task<Book> Find([Path]Guid id);
 
         [Post]
-        Task<IEnumerable<Book>> Add([Body]Book book);
+        Task Add([Body]Book book);
     }
 }
