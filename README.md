@@ -1,4 +1,4 @@
-Kubernetes Playground
+Docker Playground
 ============
-My attempts to check kubernetes. Simple cron job and web with ingress.
-For some help check instructions folder
+
+Various dockerdiles, docker copose, docker swarm and kubernetes samples. Also some vagrant.
