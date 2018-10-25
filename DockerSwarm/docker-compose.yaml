@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  kubeweb:
+    image: krystiankolad/kube.web:latest
+    networks:
+      - swarm-network
+    ports:
+      - '5000:5000'
+
+  kubeapi:
+    image: krystiankolad/kube.api:latest
+    networks:
+      - swarm-network
+    ports:
+      - '5001:5000'
+
+  mongodb:
+    image: mongo:3.2.20-jessie
+    networks:
+      - swarm-network
+
+networks: 
+  swarm-network:
+    driver: overlay
