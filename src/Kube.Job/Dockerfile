@@ -6,7 +6,7 @@ WORKDIR /source/
 
 RUN dotnet publish -o ./artifacts
 
-FROM microsoft/dotnet:2.1-sdk
+FROM microsoft/dotnet:2.1-runtime
 
 COPY --from=builder /source/artifacts/. app/
 
