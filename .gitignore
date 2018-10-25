@@ -233,3 +233,4 @@ _Pvt_Extensions
 .fake/
 .DS_Store
 packages
+.vagrant

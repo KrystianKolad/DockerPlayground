@@ -1,0 +1,18 @@
+Vagrant
+=========
+
+Set up your testing environment with vagrant!
+
+1. Run machines (```vagrant up```)
+2. Connect to master (```vagrant ssh master```), run kubernetes (```sudo kubeadm init --apiserver-advertise-address 192.168.33.10```), setup your network (```kubectl create -f https://git.io/weave-kube```)
+3. Connect to node1 (```vagrant ssh node1```), run kubernetes (```sudo kubeadm join --token (```your token```) 192.168.33.10 --node-name node1```)
+4. Connect to node2 (```vagrant ssh node2```), run kubernetes (```sudo kubeadm join --token (```your token```) 192.168.33.10 --node-name node2```)
+5. Get rid of everything after all tests (```vagrant destroy```)
+
+
+If you receive an error saying "The connection to the server localhost:8080 was refused - did you specify the right host or port?" run this three commands in your terminal:
+```
+sudo cp /etc/kubernetes/admin.conf $HOME/
+sudo chown $(id -u):$(id -g) $HOME/admin.conf
+export KUBECONFIG=$HOME/admin.conf
+```
