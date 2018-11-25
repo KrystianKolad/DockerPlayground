@@ -14,8 +14,8 @@ spec:
     spec:
       containers:
       - name: sync-pod
-        image: hashicorp/consul-k8s:0.2.0
+        image: hashicorp/consul-k8s:0.2.1
         command:
           - "/bin/sh"
           - "-ec"
-          - "consul-k8s sync-catalog -http-addr=consul:8500 -k8s-write-namespace=kube-public"
+          - "consul-k8s sync-catalog -http-addr=192.168.33.10:8500 -k8s-write-namespace=kube-public"
