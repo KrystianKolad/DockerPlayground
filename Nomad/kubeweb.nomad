@@ -1,6 +1,6 @@
 job "kubeweb" {
 
-  datacenters = ["dc1"]
+  datacenters = ["dc0"]
   type = "service"
 
   update {

@@ -1,6 +1,6 @@
 job "cronjob" {
 
-  datacenters = ["dc1"]
+  datacenters = ["dc2"]
   type = "batch"
 
   periodic {
