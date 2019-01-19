@@ -1,4 +1,4 @@
-Vagrant
+Kubernetes
 =========
 
 Set up your testing environment with vagrant!

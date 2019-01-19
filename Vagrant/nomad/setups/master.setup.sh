@@ -31,4 +31,4 @@ do
   sudo install /tmp/${bin} /usr/local/bin/${bin}
 done
 nomad -autocomplete-install
-nomad agent -dev -dc="dc0" -bootstrap-expect=3 > logs.nomad &
+nomad agent -dev -dc="dc0" -bootstrap-expect=3 -consul-server-auto-join -bind "192.168.33.10" > logs.nomad &
