@@ -1,6 +1,6 @@
 echo "Installing Docker"
 sudo apt-get update
-apt-get install -y unzip
+apt-get install -y unzip dnsmasq
 sudo apt-get upgrade
 sudo curl -fsSL get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
@@ -24,6 +24,10 @@ chmod +x consul
 echo "Running Consul"
 ./consul agent -dev -enable-script-checks -bind "192.168.33.11" -join "192.168.33.10" -node=node1 -client "0.0.0.0" > logs.consul &
     
+echo "Setting up dns"
+echo "server=/consul/192.168.33.11#8600" > /etc/dnsmasq.d/10-consul
+systemctl restart dnsmasq
+
 for bin in cfssl cfssl-certinfo cfssljson
 do
   echo "Installing $bin..."
