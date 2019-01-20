@@ -12,7 +12,7 @@ Vagrant.configure("2") do |config|
   
       master.vm.synced_folder "../../Nomad", "/playground"
 
-      config.vm.provision "file", source: "./setups/master.setup.sh", destination: "master.setup.sh"
+      master.vm.provision "file", source: "./setups/master.setup.sh", destination: "master.setup.sh"
 
       master.vm.provision "shell", inline: <<-SHELL
         ./master.setup.sh
@@ -22,7 +22,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "node1" do |node1|
       node1.vm.network "private_network", ip: "192.168.33.11"
 
-      config.vm.provision "file", source: "./setups/node1.setup.sh", destination: "node1.setup.sh"
+      node1.vm.provision "file", source: "./setups/node1.setup.sh", destination: "node1.setup.sh"
 
       node1.vm.provision "shell", inline: <<-SHELL
         ./node1.setup.sh
@@ -32,7 +32,7 @@ Vagrant.configure("2") do |config|
     config.vm.define "node2" do |node2|
       node2.vm.network "private_network", ip: "192.168.33.12"
 
-      config.vm.provision "file", source: "./setups/node2.setup.sh", destination: "node2.setup.sh"
+      node2.vm.provision "file", source: "./setups/node2.setup.sh", destination: "node2.setup.sh"
 
       node2.vm.provision "shell", inline: <<-SHELL
         ./node2.setup.sh
